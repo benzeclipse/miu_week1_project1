@@ -1,0 +1,258 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Ticket Hub</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+
+	<!-- First Page -->
+	<div data-role="page" id="home">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Ticket Hub</h1>
+		</div>
+		
+		<div data-role="content">
+		
+		<div>
+			<a href="#"> <!-- adding achor tags 'link' -->
+						<img src="images/sport.png" /> <!-- adding image -->
+							<li><a href="#favorite">
+					 <p>Specials Deals for today!</p>
+				</a></li> 
+			</a>
+		</div>
+		
+			<ul data-role="listview" data-filter="true"> <!-- List View and data-filter smart search-->
+				<li data-role="list-divider">BROWSE SHOP</li> <!-- Dividers -->
+				<li><a href="#favorite">	<!-- adding header and lower textview w/buttons-->
+					<h3>Shop Tickets</h3>
+					 <p>We have all tickets at discounted prices!</p>
+				</a></li>
+				<li><a href="#favorite">
+					<h3>Sport Stuff</h3>
+					 <p>find all the greatest apparels</p> 
+				<li><a href="#favorite">
+					<h3>Sports News</h3>
+					 <p>Up to the minute sports news</p>
+				</a></li> 
+				<li><a href="#favorite">
+					<h3>Feeds</h3>
+					 <p>get up to date</p>
+				</a></li> 
+					
+				</a></li> 
+				<li data-role="list-divider">Links To Popular Sports!</li> <!-- Dividers -->
+				<li><a href="#favorite">
+					<h3>NFL</h3>
+					 <p>Get your Football news</p>
+				</a></li> 
+				<li><a href="#favorite">
+					<h3>NBA</h3>
+					 <p>Get your Basket ball news</p>
+				</a></li> 
+				<li><a href="#favorite">
+					<h3>NHL</h3>
+					 <p>Get your Hockey news</p>
+					 <span class="ui-li-count">3</span> <!-- add numbers with circle to li -->
+				</a></li> 
+					<li><a href="#favorite">
+					<h3>AND MORE!</h3>
+					 <p></p>
+				</a></li> 
+				<li data-role="list-divider">Click Link!</li> <!-- Dividers -->
+			</ul>
+		   
+ 			<p><a href="#signUp" data-role="button" data-icon="arrow-r" data-iconpos="right">Sign up now!</a></p> <!-- data-role="button" to add a button --> 
+	    </div>
+		
+		<div data-role="footer" data-position="fixed">
+			<h4>Footer</h4>	
+		</div>
+			
+	</div>
+	
+
+	
+	<!-- Second Page -->
+	<div data-role="page" id="nfl" data-add-back-btn="true"> <!-- Using a back button -->
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Carolina Panthers!</h1>
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview"> <!-- adding listview -->
+				<li>
+					<a href="#"> <!-- adding achor tags 'link' -->
+						<img src="images/greenBall.png" /> <!-- adding image -->
+						<h3>ERROR!</h3>
+						<p>Sorry, refresh and try again later!</p> <!-- adding paragraph inside of a list -->
+					</a>
+				</li> <!-- adjusting header list -->
+				<li>Stolen stuff</li>
+				<li>Oh yeah</li>
+			</ul>
+		</div>
+		
+		<!-- FOOTER -->
+		<div data-role="footer" data-position="fixed" data-id="nfl">
+			<div data-role="navbar"> <!-- adding nav bar -->
+			 <ul>
+				<li><a href="#favorite" data-icon="star">favorite</a></li> <!-- adding star icon -->
+				<li><a href="#change" data-icon="gear">change</a></li>
+				<li><a href="#search" data-icon="search">search</a></li>
+			 </ul>
+		  </div>	
+	   </div> 
+	   
+	</div>
+	
+
+		
+	
+	
+	<!-- Error Page -->
+	<div data-role="page" id="error" data-add-back-btn="true"> <!-- Using a back button -->
+		
+		<div data-role="header" data-position="fixed">
+			<h1>ERROR!</h1>
+		</div>
+		
+		
+		 <canvas id="canvas" height="125"></canvas>
+	        <a href="additem/additem.html" id="btn" data-role="button" data-icon="arrow-r" data-iconpos="right" data-mini="true" data-inline="true" data-theme="b" data-ajax="false">Add a New Lead...</a>
+	    </div>
+		
+		<div data-role="content">
+			<p>Sorry, refresh and try again later!</p>
+		</div>
+		
+		<!-- FOOTER -->
+		<div data-role="footer" data-position="fixed" data-id="nfl">
+			<div data-role="navbar"> <!-- adding nav bar -->
+			 <ul>
+				<li><a href="#favorite" data-icon="star" class="ui-btn-active">favorite</a></li> <!-- adding active button icon -->
+				<li><a href="#change" data-icon="gear">change</a></li>
+				<li><a href="#search" data-icon="search">search</a></li>
+			 </ul>
+		  </div>	
+	   </div> 
+	   
+	</div>
+	
+	
+	
+		<!-- load page -->
+	<div data-role="page" id="favorite" data-add-back-btn="true" data-id="displayingData"> <!-- Using a back button -->
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Show Data</h1>
+		</div>
+		
+		<div data-role="content">
+			<p>Sorry, an error has occur!</p>
+		</div>
+		
+		<!-- FOOTER -->
+		<div data-role="footer" data-position="fixed" data-id="nfl">
+			<div data-role="navbar"> <!-- adding nav bar -->
+		  </div>	
+	   </div> 
+	   
+	</div>
+	
+	
+	<!-- additem page -->
+	<div data-role="page" id="signUp" >
+		
+		<div data-role="header" data-position="fixed" >
+			<h1>Ticket Hub</h1>
+		</div>
+		
+		<div data-role="content" >
+   		<nav>
+   			<a href="#home" id="back">Home</a>
+   			<a href="#" id="Info" data-role="button"> Show Info </a>
+			<a href="#" id="clearData" data-role="button">Clear Data</a>
+		</nav>
+   <form action="#" method = "post" id="forms">
+       <fieldset>
+			<legend>Information</legend>
+			<ul id="errors" ></ul>
+			<ul>
+				<li><label for="team"> Desired Sport:  </label><input type = "text" id = "sport" placeholder="enter favorite sport"/></li>
+ 				<li><label for="tname"> Team Name: </label><input type = "text" id = "tname" placeholder="enter team name"/></li>
+ 				<li><label for="name"> Your name </label><input type = "text" id = "name" placeholder="enter your full name"/></li>
+ 				<li id="mStuff"><label for="group">More Stuff </label></li>
+  	  		</ul>
+	   </fieldset>
+	   <fieldset>
+	   		<legend>Availability</legend>
+	  		<ul>
+				<text> Add dates: </text>
+				<li><input id="aDate"  <input type="date"/>		
+ 				<li><label for => Season Ticket</label><input type="radio" value ="Season" id="season" name="any"/></li>
+ 			
+ 				<li><label for => Single Ticket </label><input type="radio" value="Single"  id="single" name="any"></li>
+ 				
+ 			</ul>		
+			<div>
+				<label>Chose 1 - 100 tickets</label>
+				<input id="range" type="range" min="0" max="100" value="1"/>
+			</div>		 
+	   </fieldset>
+	   <fieldset>
+    		<legend>Preferences</legend>
+			<ul>
+ 	 			<li><label for="payments">Preferred Method of Payment</label></li>
+  				<select id="payments">
+	   <optgroup label="Method">
+	   		<option value ="Credit" id="credit">Credit Card</option>
+	  		<option value ="Cash" id="cash">Cash</option>
+	   		<option value="Check" id="check">Check</option>
+	   </optgroup>
+	 			</select>
+	 		<li>
+	  			<label for="concerns"> Please tell us what seats and pricing you prefer </label><textarea id="concerns"></textarea>
+	  		</li>			
+	 		</ul>
+	  </fieldset>
+	 </form>
+	 <div data-role="footer" data-position="fixed" data-id="nfl">
+			<nav>
+			<input type="button" value="Save All" id="saveValues"></input>
+			</nav>
+    </div>
+    </div>
+	</div>
+
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	 <script type="text/javascript" src="js/json.js"></script>
+	 <script type="text/javascript" src="js/main.js"></script>
+	
+	
+
+</body>
+</html>
